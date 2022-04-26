@@ -1,0 +1,19 @@
+.button {
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0.5rem 1rem;
+  border: none;
+  min-width: 120px;
+  max-width: 150px;
+  border-radius: 30px;
+}
+.yellow {
+  color: #fff;
+  background: #ff8800;
+  background: -webkit-linear-gradient(to right, rgb(253, 139, 9), #ffb601);
+  background: linear-gradient(to right, #ff8800, #ffb601);
+}
+.white {
+  background-color: #fff;
+  color: #1a2647;
+}
