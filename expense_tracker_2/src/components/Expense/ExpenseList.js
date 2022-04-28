@@ -5,21 +5,14 @@ const ExpenseList = props => {
         <section>
             <span className='expense_list_head'>History</span>
             <ul className='transaction_history'>
-                <li className='expense_income_item expense_gain'>
-                    <span className='close'>X</span>
-                    <span>{props.name}Salary</span>
-                    <span>{props.amount}100</span>
-                </li>
-                <li className='expense_income_item expense_gain'>
-                    <span className='close'>X</span>
-                    <span>{props.name}Salary</span>
-                    <span>{props.amount}100</span>
-                </li>
-                <li className='expense_income_item expense_spend'>
-                    <span className='close'>X</span>
-                    <span>{props.name}Salary</span>
-                    <span>{props.amount}100</span>
-                </li>
+                {props.list.length === 0 ? <span className='no_data'>No transaction History</span> :
+                    props.list.map(item =>
+                        <li key={item.id} className={`expense_income_item ${item.type === '+' ? 'expense_gain' : 'expense_spend'}`} >
+                            <span className='close'>X</span>
+                            <span>{item.text}</span>
+                            <span className={item.type === '+' ? 'positive' : 'negative'}>{`${item.type} $ ${item.amount}`}</span>
+                        </li>
+                    )}
             </ul>
         </section>
     )

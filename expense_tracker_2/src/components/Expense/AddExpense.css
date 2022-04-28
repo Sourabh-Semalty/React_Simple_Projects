@@ -30,3 +30,31 @@ input {
   padding: 0.5rem 0rem;
   font-size: 16px;
 }
+
+.transac_error {
+  background: #ad0d08;
+  display: block;
+  padding: 0.5rem 1rem;
+  box-sizing: 0px 0px 12px rgba(0, 0, 0, 0.5);
+}
+.transac_success {
+  background: #07b625;
+  display: block;
+  padding: 0.5rem 1rem;
+  box-sizing: 0px 0px 12px rgba(0, 0, 0, 0.5);
+}
+
+.positive {
+  font-size: 18px;
+  color: #07b625;
+}
+.negative {
+  font-size: 18px;
+  color: #ad0d08;
+}
+.no_data {
+  background-color: rgb(197, 193, 193);
+  color: #262d3f;
+  display: block;
+  padding: 0.5rem 1rem;
+}
