@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { Alert, Button, Form, FormControl, InputGroup } from 'react-bootstrap';
 import './AddExpense.css'
+
 const AddExpense = props => {
     const [text, setText] = useState("");
     const [amount, setAmount] = useState(0);
@@ -42,6 +44,7 @@ const AddExpense = props => {
                 amount: Math.abs(amount),
                 type: amount > 0 ? '+' : '-'
             }
+            if (amount < 0 && props.totalAmount + Number(amount) < 0) throw new Error("Spend Amount cannot be greater than total balance")
             props.onAddExpense(newTransaction);
             setText('');
             setAmount(0);
@@ -56,17 +59,17 @@ const AddExpense = props => {
     return (
         <form onSubmit={onSubmitExpense} className='add_new_transc_form'>
             <span className='add_new_trasnc_head'>Add new transaction</span>
-            {isSuccess && <span className='transac_success'>{isSuccess}</span>}
-            {isError && <span className='transac_error'>{isError}</span>}
-            <div className='form-group'>
-                <label htmlFor='text'>Text</label>
-                <input onChange={onChangeTextHandler} type='text' id='text' value={text} name="text" placeholder="Enter the Text" />
-            </div>
-            <div className='form-group'>
-                <label htmlFor='amount'>Amount</label>
-                <input onChange={onChangeAmountHandler} type='number' id='amount' value={amount} name="amount" placeholder="Enter the Amount" />
-            </div>
-            <button type='submit'>Add transaction</button>
+            {isSuccess && <Alert variant='success'>{isSuccess}</Alert>}
+            {isError && <Alert variant='danger'>{isError}</Alert>}
+            <InputGroup className="mb-3">
+                <Form.Label htmlFor="Text">Text</Form.Label>
+                <FormControl onChange={onChangeTextHandler} type='text' id='text' value={text} name="text" placeholder="Enter the Text" />
+            </InputGroup>
+            <InputGroup className="mb-3">
+                <Form.Label htmlFor="amount">Amount</Form.Label>
+                <FormControl onChange={onChangeAmountHandler} type='number' id='amount' value={amount} name="amount" placeholder="Enter the Amount" />
+            </InputGroup>
+            <Button type='submit' variant="primary">Primary</Button>{' '}
         </form>
     )
 }

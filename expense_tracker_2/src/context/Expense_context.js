@@ -5,6 +5,4 @@ export const ExpenseGlobal = React.createContext({
     expense: 0,
     transactions: [],
     totalBalance: 0,
-    addItem: (item) => { },
-    removeItem: (id) => { },
 });

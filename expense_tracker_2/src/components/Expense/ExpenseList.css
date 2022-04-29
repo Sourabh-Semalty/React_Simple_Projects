@@ -9,8 +9,14 @@
   position: relative;
 }
 .transaction_history {
-  padding: 0;
+  padding: 0px 26px;
   list-style-type: none;
+  max-height: 200px;
+  overflow-y: scroll;
+  scrollbar-color: #1d2437 #222b46;
+  scrollbar-width: thin;
+  width: 500px;
+  margin-left: -50px;
 }
 .expense_income_item {
   display: flex;

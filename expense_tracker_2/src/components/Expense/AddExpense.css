@@ -32,7 +32,7 @@ input {
 }
 
 .transac_error {
-  background: #ad0d08;
+  background: #a43653;
   display: block;
   padding: 0.5rem 1rem;
   box-sizing: 0px 0px 12px rgba(0, 0, 0, 0.5);
@@ -50,7 +50,7 @@ input {
 }
 .negative {
   font-size: 18px;
-  color: #ad0d08;
+  color: #a43653;
 }
 .no_data {
   background-color: rgb(197, 193, 193);
